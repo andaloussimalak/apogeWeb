@@ -4,9 +4,9 @@
         <div class="card card-default rounded-0 shadow ">
             <div class="card-header">
                 <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h4 class="card-title fw-bold">Subject List</h4>
+                    <h4 class="card-title fw-bold">Liste des modules</h4>
                     <div class="tools">
-                        <button type="button" class="btn btn-success rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Add New</button>
+                        <button type="button" class="btn btn-success rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Ajouter nouveau</button>
                     </div>
                 </div>
             </div>
@@ -23,9 +23,7 @@
                         <thead>
                             <tr class="bg-gradient bg-success bg-opacity-50 text-light">
                                 <th class="px-2 py-2 text-center">#</th>
-                                <th class="px-2 py-2 text-center">DateTime</th>
-                                <th class="px-2 py-2 text-center">Subject Name</th>
-                                <th class="px-2 py-2 text-center">Status</th>
+                                <th class="px-2 py-2 text-center">Nom de module</th>
                                 <th class="px-2 py-2 text-center">Action</th>
                             </tr>
                         </thead>
@@ -33,13 +31,9 @@
                             {% for subject in subjects %}
                             <tr>
                                 <td class="px-2 py-1 align-middle text-center">{{ forloop.counter }}</td>
-                                <td class="px-2 py-1 align-middle">{{ subject.date_created|date:"Y-m-d" }}</td>
+
                                 <td class="px-2 py-1 align-middle">{{ subject.name }}</td>
-                                <td class="px-1 py-1 align-middle text-center">
-                                    {% if subject.status == '1' %}
-                                    <span class="badge bg-success bg-gradient rounded-pill px-2">Active</span> {% else %}
-                                    <span class="badge bg-secondary bg-gradient rounded-pill px-2">Inactive</span> {% endif %}
-                                </td>
+
                                 <td class="px-2 py-1 align-middle text-center">
                                     <div class="dropdown">
                                         <button class="btn btn-success btn-sm mb-0 rounded-0 dropdown-toggle" type="button" id="actionBtn-{{ subject.pk }}" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,13 +58,13 @@
 <script>
     $(function() {
         $('#add_new').click(function() {
-            uni_modal('<i class="fa fa-plus"></i> Add Subject', '{% url "manage-subject" %}')
+            uni_modal('<i class="fa fa-plus"></i> Ajouter module', '{% url "manage-subject" %}')
         })
         $('.edit-data').click(function() {
-            uni_modal('<i class="fa fa-edit"></i> Edit Subject', $(this).attr('data-url'))
+            uni_modal('<i class="fa fa-edit"></i>Modifier module', $(this).attr('data-url'))
         })
         $('.delete-data').click(function() {
-            _conf("Are you sure to delete this Subject permanently?", "delete_subject", [$(this).attr('data-id')])
+            _conf("Êtes-vous sûr de vouloir supprimer ce sujet définitivement ?", "delete_subject", [$(this).attr('data-id')])
         })
 
         $('#subject-list').DataTable({
