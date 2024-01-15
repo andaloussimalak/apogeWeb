@@ -44,9 +44,9 @@
                                         Action
                                         </button>
                                         <ul class="dropdown-menu" aria-labelledby="actionBtn-{{ student.pk }}">
-                                        <li><a class="dropdown-item view-data d-flex w-100 align-items-center" href="javascript:void(0)" data-url="{% url 'view-student-pk' student.pk %}"><i class="material-icons">preview</i> View</a></li>
-                                        <li><a class="dropdown-item edit-data d-flex w-100 align-items-center" href="javascript:void(0)" data-url="{% url 'manage-student-pk' student.pk %}"><i class="material-icons">edit</i> Edit</a></li>
-                                        <li><a class="dropdown-item delete-data d-flex w-100 align-items-center" href="javascript:void(0)" data-id="{{ student.pk }}"><i class="material-icons">delete</i> Delete</a></li>
+                                        <li><a class="dropdown-item view-data d-flex w-100 align-items-center" href="javascript:void(0)" data-url="{% url 'view-student-pk' student.pk %}"><i class="material-icons">preview</i> Afficher</a></li>
+                                        <li><a class="dropdown-item edit-data d-flex w-100 align-items-center" href="javascript:void(0)" data-url="{% url 'manage-student-pk' student.pk %}"><i class="material-icons">edit</i> Modifier</a></li>
+                                        <li><a class="dropdown-item delete-data d-flex w-100 align-items-center" href="javascript:void(0)" data-id="{{ student.pk }}"><i class="material-icons">delete</i> Suprimer</a></li>
                                         </ul>
                                     </div>
                                 </td>
