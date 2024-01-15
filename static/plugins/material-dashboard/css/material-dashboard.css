@@ -1818,7 +1818,7 @@ progress {
   color: #495057;
   background-color: transparent;
   background-clip: padding-box;
-  border: 1px solid #d2d6da;
+  border: 1px solid #c2e8be !important;
   -webkit-appearance: none;
           appearance: none;
   border-radius: 0.375rem;
@@ -1833,7 +1833,7 @@ progress {
   .form-control:focus {
     color: #495057;
     background-color: transparent;
-    border-color: transparent;
+    border-color: #c2e8be;
     outline: 0;
     box-shadow: none; }
   .form-control::-webkit-date-and-time-value {
