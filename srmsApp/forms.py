@@ -99,17 +99,16 @@ class SaveSubject(forms.ModelForm):
         raise forms.ValidationError("Subject Name Already Exists.")
 
 class SaveStudent(forms.ModelForm):
+    print("zave student hi")
     classI = forms.CharField(max_length="30", label="Class")
-    student_id = forms.CharField(max_length="500", label="Student ID/Code")
     first_name = forms.CharField(max_length="500", label="First Name")
     middle_name = forms.CharField(max_length="500", label="Middle Name", required=False)
     last_name = forms.CharField(max_length="500", label="Last Name")
-    gender = forms.ChoiceField(choices=[('Male','Male'),('Female','Female')], label="Gender")
     status = forms.ChoiceField(choices = [('1' ,'Active'),('2' ,'Inactive')], label="Status")
 
     class Meta:
         model = models.Student
-        fields = ('classI', 'student_id', 'first_name', 'middle_name', 'last_name', 'gender','status',)
+        fields = ('classI',  'first_name', 'middle_name', 'last_name', 'status',)
     
     def clean_classI(self):
         class_id = self.cleaned_data['classI']

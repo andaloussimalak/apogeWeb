@@ -259,17 +259,19 @@ def view_student(request, pk = None):
         context['student'] = {}
     return render(request, 'view_student.html', context)
 
+
 @login_required
 def save_student(request):
-    resp = { 'status':'failed', 'msg' : '' }
+    resp = {'status': 'failed', 'msg': ''}
+
     if not request.method == 'POST':
         resp['msg'] = 'Request has been sent without data.'
     else:
         post = request.POST
-        if post['id'] == None or post['id'] == '':
+        if post['id'] == '' or post['id'] is None:
             form = forms.SaveStudent(post)
         else:
-            student = models.Student.objects.get(id = post['id'])
+            student = models.Student.objects.get(id=post['id'])
             form = forms.SaveStudent(post, instance=student)
 
         if form.is_valid():
@@ -280,8 +282,9 @@ def save_student(request):
             resp['msg'] = 'Student Detail has failed to save.'
             for field in form:
                 for error in field.errors:
-                    resp['msg'] += str(f"<br/> [{field.name}] "+error)
-    return HttpResponse(json.dumps(resp),content_type="application/json")    
+                    resp['msg'] += str(f"<br/> [{field.name}] " + error)
+
+    return HttpResponse(json.dumps(resp), content_type="application/json")
 
 @login_required
 def delete_student(request):
@@ -402,7 +405,7 @@ def delete_result(request):
         try:
             models.Result.objects.get(id = post['id']).delete()
             resp['status'] = 'success'
-            messages.success(request, "Result Detail has been deleted successfully.")
+            messages.success(request, "Les resultats ont ete supprime avec succes.")
         except:
             resp['msg'] = 'result Detail has failed to delete.'
 

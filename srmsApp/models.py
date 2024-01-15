@@ -1,4 +1,6 @@
 from unittest import result
+
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum
 from django.utils import timezone
@@ -26,7 +28,6 @@ class Subject(models.Model):
 
 class Student(models.Model):
     classI = models.ForeignKey(Class, on_delete= models.CASCADE)
-    student_id = models.CharField(max_length=250)
     first_name = models.CharField(max_length=250)
     middle_name = models.CharField(max_length=250, blank= True, null=True)
     last_name = models.CharField(max_length=250)
@@ -36,7 +37,11 @@ class Student(models.Model):
     date_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.student_id + " - " + self.first_name + " " + (str(self.middle_name + " " + self.last_name)  if self.middle_name != '' else self.last_name ))
+        full_name = f"{self.first_name} {self.middle_name} {self.last_name}" if self.middle_name else f"{self.first_name} {self.last_name}"
+        return f"{self.id} - {full_name}"
+
+    class Meta:
+        ordering = ['id']
 
     def get_name(self):
         return str(self.first_name + " " + (str(self.middle_name + " " + self.last_name)  if self.middle_name != '' else self.last_name ))
