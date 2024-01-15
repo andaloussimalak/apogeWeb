@@ -9,7 +9,7 @@
                     <label for="student" class="control-label">Student</label>
                     <select name="student" id="student" class="form-select rounded-0" required>
                         {% if not  result.student %}
-                        <option value="" disabled selected>Please Select Here</option>
+                        <option value="" disabled selected>Svp selectionnez ici</option>
                         {% endif %}
                         {% for stud in students %}
                         {% if result.student.id == stud.id %}
@@ -23,7 +23,7 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="form-group mb-3 ">
-                    <label for="semester" class="control-label">Semester</label>
+                    <label for="semester" class="control-label">Semestre</label>
                     <input type="text" id="semester" name="semester" class="form-control form-control-sm py-1 rounded-0" value="{{ result.semester }}" required>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <label for="subject" class="control-label">Subject</label>
                     <select name="subject" id="subject" class="form-select rounded-0">
                         {% if not  student.subject %}
-                        <option value="" disabled selected>Please Select Here</option>
+                        <option value="" disabled selected>Svp selectionnez ici</option>
                         {% endif %}
                         {% for subject in subjects %}
                         {% if student.subject.id == subject.id %}
@@ -49,12 +49,12 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="form-group mb-3 ">
-                    <label for="grade" class="control-label">Mark</label>
+                    <label for="grade" class="control-label">Note</label>
                     <input type="number" step="any" id="grade" class="form-control form-control-sm py-1 rounded-0 text-end">
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <button class="btn btn-primary btn-sm rounded-0 d-flex align-items-center" id="add_to_list" type="button"><span class="material-icons">add</span> Add to List</button>
+                <button class="btn btn-primary btn-sm rounded-0 d-flex align-items-center" id="add_to_list" type="button"><span class="material-icons">ajouter</span> Ajouter</button>
             </div>
         </div>
         <hr>
@@ -66,8 +66,8 @@
             </colgroup>
             <thead>
                 <tr class="bg-info bg-gradient">
-                    <th class="px-2 py-1 text-center">Subject</th>
-                    <th class="px-2 py-1 text-center">Mark</th>
+                    <th class="px-2 py-1 text-center">Module</th>
+                    <th class="px-2 py-1 text-center">Note</th>
                     <th class="px-2 py-1 text-center">Action</th>
                 </tr>
             </thead>
@@ -88,7 +88,7 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <th class="px-2 py-1"><b>Average</b></th>
+                    <th class="px-2 py-1"><b>Moyenne</b></th>
                     <th colspan="2" class="px-2 py-1 fw-bolder" id="average">0.00</th>
                 </tr>
             </tfoot>
@@ -126,12 +126,12 @@
                 calc_average()
             }
             $('#student').select2({
-                placeholder: "Please Select Student Here",
+                placeholder: "Veuillez choisir un étudiant",
                 width: '100%',
                 dropdownParent: $('#uni_modal')
             })
             $('#subject').select2({
-                placeholder: "Please Select Subject Here",
+                placeholder: "Veuillez choisir un module",
                 width: '100%',
                 dropdownParent: $('#uni_modal')
             })
@@ -156,7 +156,7 @@
                 $("#subject").val("").trigger('change')
                 $("#grade").val("")
                 tr.find('.rem-item').click(function() {
-                    if (confirm("Are you sure to remove this from list?") === true) {
+                    if (confirm("Êtes-vous sûr de vouloir supprimer ceci de la liste ?") === true) {
                         tr.remove();
                         calc_average()
                     }
@@ -164,7 +164,7 @@
                 calc_average()
             })
             $('table#marks-list tbody tr').find('.rem-item').click(function() {
-                if (confirm("Are you sure to remove this from list?") === true) {
+                if (confirm("Êtes-vous sûr de vouloir supprimer ceci de la liste ?") === true) {
                     $(this).closest('tr').remove();
                     calc_average()
                 }
