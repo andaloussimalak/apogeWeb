@@ -13,12 +13,13 @@ body {
     border: 1px solid #d2d6da38 !important;
     color: #000 !important;
 }
-
 .dark-version .form-control:not(.form-control-sm),
 .dark-version .form-select:not(.form-select-sm) {
     padding: 0.5rem 0.5rem !important;
 }
-
+.form-control{
+    border-color: #c2e8be !important;
+}
 .dark-version .form-select>option {
     color: #000 !important;
 }
