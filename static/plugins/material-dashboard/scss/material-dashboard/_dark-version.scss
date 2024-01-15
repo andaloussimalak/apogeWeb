@@ -1,12 +1,12 @@
 .dark-version {
-  background-color: $dark-version-bg-color !important;
+  background-color: $light-version-bg-color !important;
 
   .main-content {
-    background-color: $dark-version-bg-color !important;
+    background-color: $light-version-bg-color !important;
   }
 
   .sidenav {
-    background: $dark-version-sidenav-bg-color !important;
+    background: $light-version-sidenav-bg-color !important;
 
     &.bg-transparent {
       background: transparent !important;
@@ -37,7 +37,7 @@
         .nav-item {
           .nav-link:not(.active) {
             i {
-              color: $dark !important;
+              color: $white !important;
             }
           }
           h6 {
@@ -73,7 +73,7 @@
   }
 
   .bg-gradient-dark {
-    background-image: linear-gradient(195deg, $dark-gradient-dark, $dark-gradient-state-dark);
+    background-image: linear-gradient(195deg, $white-gradient-white, $white-gradient-state-white);
   }
 
   .card,
@@ -119,7 +119,7 @@
     &.input-group-dynamic,
     &.input-group-static {
       .form-control {
-        background-image: $dark-version-input-bg-image !important;
+        background-image: $white-version-input-bg-image !important;
         background-size: 0 100%, 100% 100%;
         &:focus {
           background-size: 100% 100%, 100% 100%;
@@ -163,7 +163,7 @@
 
   .nav {
     &.bg-white {
-      background-color: $dark-version-card-bg-color !important;
+      background-color: $white-version-card-bg-color !important;
       box-shadow: $dark-version-card-box-shadow;
     }
 

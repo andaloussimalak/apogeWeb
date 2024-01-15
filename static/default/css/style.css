@@ -11,7 +11,7 @@ body {
 .dark-version .form-control,
 .dark-version .form-select {
     border: 1px solid #d2d6da38 !important;
-    color: #fff !important;
+    color: #000 !important;
 }
 
 .dark-version .form-control:not(.form-control-sm),
@@ -24,7 +24,7 @@ body {
 }
 
 .dark-version .paginate_button>.page-link {
-    background: var(--bs-dark) !important;
+    background: var(--bs-light) !important;
 }
 
 .dark-version .table tbody tr:last-child td {
@@ -165,7 +165,7 @@ body.loading {
 
 .select2-selection,
 .select2-dropdown {
-    background-color: var(--bs-dark) !important;
+    background-color: var(--bs-light) !important;
     border-radius: unset !important;
     color: #fff !important;
 }

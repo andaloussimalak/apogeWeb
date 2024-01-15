@@ -11,8 +11,8 @@ from srmsApp import forms, models
 context={
     'page':'',
     'page_title':'',
-    'system_name':'Student Result Managament System',
-    'short_name':'SRMS',
+    'system_name':'Systeme de gestion des notes',
+    'short_name':'FSTT',
     'has_navigation':True,
     'has_sidebar':True,
 }
