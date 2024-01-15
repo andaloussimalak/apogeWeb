@@ -26,18 +26,18 @@
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <div class="card card-default rounded-0 shadow">
             <div class="card-header">
-                <h4 class="card-title"><b>Login</b></h4>
+                <h4 class="card-title"><b>Se connecter</b></h4>
             </div>
             <div class="card-body">
                 <div class="container-fluid">
                     <form id="login-user">
                         {% csrf_token %}
                         <div class="form-group mb-3">
-                            <label for="username" class="control-label">Username</label>
+                            <label for="username" class="control-label">Nom d'utilisateur</label>
                             <input type="text" class="form-control rounded-0" autofocus name="username" id="username" required="required">
                         </div>
                         <div class="form-group mb-3">
-                            <label for="password" class="control-label">Password</label>
+                            <label for="password" class="control-label">Mot de passe</label>
                             <input type="password" class="form-control rounded-0" name="password" id="password" required="required">
                         </div>
                         <div class="form-group mb-3">
@@ -46,7 +46,7 @@
                                     <a href="javascript:void(0)" id="find_result">Voir les notes</a>
                                 </div>
                                 <button class="btn btn-sm rounded-0 btn-slack">
-                                        Login
+                                        Connexion
                                     </button>
                             </div>
                         </div>
