@@ -4,9 +4,9 @@
         <div class="card card-default rounded-0 shadow ">
             <div class="card-header">
                 <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h4 class="card-title fw-bold">Class List</h4>
+                    <h4 class="card-title fw-bold">Liste des groupes</h4>
                     <div class="tools">
-                        <button type="button" class="btn btn-success rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Add New</button>
+                        <button type="button" class="btn btn-success rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Ajouter un nouveau</button>
                     </div>
                 </div>
             </div>
@@ -17,15 +17,13 @@
                             <col width="10%">
                             <col width="20%">
                             <col width="20%">
-                            <col width="20%">
                             <col width="15%">
                             <col width="15%">
                         </colgroup>
                         <thead>
                             <tr class="bg-gradient bg-success bg-opacity-50 text-light">
-                                <th class="px-2 py-2 text-center">#</th>
-                                <th class="px-2 py-2 text-center">Date/Time</th>
-                                <th class="px-2 py-2 text-center">Level</th>
+                                <th class="px-2 py-2 text-center">Apogée</th>
+                                <th class="px-2 py-2 text-center">Niveau</th>
                                 <th class="px-2 py-2 text-center">Section</th>
                                 <th class="px-2 py-2 text-center">Status</th>
                                 <th class="px-2 py-2 text-center">Action</th>
@@ -35,7 +33,6 @@
                             {% for class in classes %}
                             <tr>
                                 <td class="px-2 py-1 align-middle text-center">{{ forloop.counter }}</td>
-                                <td class="px-2 py-1 align-middle">{{ class.date_created|date:"Y-m-d h:i A" }}</td>
                                 <td class="px-2 py-1 align-middle">{{ class.level }}</td>
                                 <td class="px-2 py-1 align-middle text-end">{{ class.section }}</td>
                                 <td class="px-1 py-1 align-middle text-center">

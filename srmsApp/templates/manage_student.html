@@ -6,41 +6,37 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group mb-3 ">
-                    <label for="student_id" class="control-label">Student ID/Code</label>
+                    <label for="student_id" class="control-label">Apogée : </label>
                     <input type="text" class="form-control rounded-0" id="student_id" name="student_id" value="{{ student.student_id }}" required>
                 </div>
                 <div class="form-group mb-3 ">
-                    <label for="first_name" class="control-label">First Name</label>
+                    <label for="first_name" class="control-label">Nom : </label>
                     <input type="text" class="form-control rounded-0" id="first_name" name="first_name" value="{{ student.first_name }}" required>
                 </div>
                 <div class="form-group mb-3 ">
-                    <label for="middle_name" class="control-label">Middle Name</label>
-                    <input type="text" class="form-control rounded-0" id="middle_name" name="middle_name" value="{{ student.middle_name }}">
-                </div>
-                <div class="form-group mb-3 ">
-                    <label for="last_name" class="control-label">Last Name</label>
+                    <label for="last_name" class="control-label">Prénom : </label>
                     <input type="text" class="form-control rounded-0" id="last_name" name="last_name" value="{{ student.last_name }}" required>
                 </div>
                 <div class="form-group mb-3 ">
-                    <label for="gender" class="control-label">Gender</label>
+                    <label for="gender" class="control-label">Genre</label>
                     <select name="gender" id="gender" class="form-select rounded-0" required="required">
                         {% if student.gender == '1' %}
-                        <option selected>Male</option>
+                        <option selected>Homme</option>
                         {% else %}
-                        <option>Male</option>
+                        <option>Homme</option>
                         {% endif %}
                         {% if student.gender == '2' %}
-                        <option selected>Female</option>
+                        <option selected>Femme</option>
                         {% else %}
-                        <option>Female</option>
+                        <option>Femme</option>
                         {% endif %}
                     </select>
                 </div>
                 <div class="form-group mb-3 ">
-                    <label for="classI" class="control-label">Class</label>
+                    <label for="classI" class="control-label">Groupe</label>
                     <select name="classI" id="classI" class="form-select rounded-0" required="required">
                         {% if not  student.classI %}
-                        <option value="" disabled selected>Please Select Here</option>
+                        <option value="" disabled selected>Veuillez sélectionner ici</option>
                         {% endif %}
                         {% for class in classes %}
                         {% if student.classI.id == class.id %}

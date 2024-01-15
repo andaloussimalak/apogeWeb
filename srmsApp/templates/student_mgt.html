@@ -4,9 +4,9 @@
         <div class="card card-default rounded-0 shadow ">
             <div class="card-header">
                 <div class="d-flex w-100 align-items-center justify-content-between">
-                    <h4 class="card-title fw-bold">Student List</h4>
+                    <h4 class="card-title fw-bold">Liste des étudiants</h4>
                     <div class="tools">
-                        <button type="button" class="btn btn-success rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Add New</button>
+                        <button type="button" class="btn btn-success rounded-0 bg-gradient btn-sm" id='add_new'><i class="fa fa-plus"></i> Ajouter un nouveau</button>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,6 @@
                     <table class="table table-bordered" id="student-list">
                         <colgroup>
                             <col width="5%">
-                            <col width="20%">
                             <col width="25%">
                             <col width="25%">
                             <col width="15%">
@@ -23,10 +22,8 @@
                         </colgroup>
                         <thead>
                             <tr class="bg-gradient bg-success bg-opacity-50 text-light">
-                                <th class="px-2 py-2 text-center">#</th>
-                                <th class="px-2 py-2 text-center">DateTime</th>
-                                <th class="px-2 py-2 text-center">Student ID</th>
-                                <th class="px-2 py-2 text-center">Name</th>
+                                <th class="px-2 py-2 text-center">Apogée</th>
+                                <th class="px-2 py-2 text-center">Nom/Prénom</th>
                                 <th class="px-2 py-2 text-center">Status</th>
                                 <th class="px-2 py-2 text-center">Action</th>
                             </tr>
@@ -35,8 +32,6 @@
                             {% for student in students %}
                             <tr>
                                 <td class="px-2 py-1 align-middle text-center">{{ forloop.counter }}</td>
-                                <td class="px-2 py-1 align-middle">{{ student.date_created|date:"Y-m-d" }}</td>
-                                <td class="px-2 py-1 align-middle">{{ student.student_id }}</td>
                                 <td class="px-2 py-1 align-middle">{{ student.get_name }}</td>
                                 <td class="px-1 py-1 align-middle text-center">
                                     {% if student.status == '1' %}
