@@ -135,7 +135,7 @@ def save_class(request):
         if form.is_valid():
             form.save()
             resp['status'] = 'success'
-            messages.success(request, "Class Detail has been saved successfully.")
+            messages.success(request, "Groupe a ete enregistre avec succes.")
         else:
             resp['msg'] = 'Class Detail has failed to save.'
             for field in form:
@@ -153,7 +153,7 @@ def delete_class(request):
         try:
             models.Class.objects.get(id = post['id']).delete()
             resp['status'] = 'success'
-            messages.success(request, "Class Detail has been deleted successfully.")
+            messages.success(request, "Groupe a ete supprime avec succes.")
         except:
             resp['msg'] = 'Class Detail has failed to delete.'
 
@@ -205,7 +205,7 @@ def save_subject(request):
         if form.is_valid():
             form.save()
             resp['status'] = 'success'
-            messages.success(request, "Subject Detail has been saved successfully.")
+            messages.success(request, "Module a ete enregistre avec succes .")
         else:
             resp['msg'] = 'Subject Detail has failed to save.'
             for field in form:
@@ -223,7 +223,7 @@ def delete_subject(request):
         try:
             models.Subject.objects.get(id = post['id']).delete()
             resp['status'] = 'success'
-            messages.success(request, "Subject Detail has been deleted successfully.")
+            messages.success(request, "Module a ete supprime avec succes.")
         except:
             resp['msg'] = 'Subject Detail has failed to delete.'
 
@@ -275,7 +275,7 @@ def save_student(request):
         if form.is_valid():
             form.save()
             resp['status'] = 'success'
-            messages.success(request, "Student Detail has been saved successfully.")
+            messages.success(request, "Etudiant a ete ajoute avec succes.")
         else:
             resp['msg'] = 'Student Detail has failed to save.'
             for field in form:
@@ -293,7 +293,7 @@ def delete_student(request):
         try:
             models.Student.objects.get(id = post['id']).delete()
             resp['status'] = 'success'
-            messages.success(request, "Student Detail has been deleted successfully.")
+            messages.success(request, "Letudiant a ete supprime avec succes.")
         except:
             resp['msg'] = 'Student Detail has failed to delete.'
 
@@ -381,7 +381,7 @@ def save_result(request):
                 i +=1
             if has_error == False:
                 resp['status'] = 'success'
-                messages.success(request, "Result Detail has been saved successfully.")
+                messages.success(request, "Le resultat a ete enregistre avec succes.")
             else:
                 if is_new:
                     models.Result.objects.get(id = post['id']).delete()
@@ -402,7 +402,7 @@ def delete_result(request):
         try:
             models.Result.objects.get(id = post['id']).delete()
             resp['status'] = 'success'
-            messages.success(request, "Result Detail has been deleted successfully.")
+            messages.success(request, "Detail de module a ete enregistre avec succes.")
         except:
             resp['msg'] = 'result Detail has failed to delete.'
 
