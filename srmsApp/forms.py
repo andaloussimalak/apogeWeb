@@ -76,11 +76,10 @@ class SaveClass(forms.ModelForm):
 
 class SaveSubject(forms.ModelForm):
     name = forms.CharField(max_length="250")
-    status = forms.ChoiceField(choices=[('1','Active'),('2','Inctive')])
 
     class Meta:
         model = models.Subject
-        fields = ('name', 'status',)
+        fields = ('name',)
     
     def clean_name(self):
         name = self.cleaned_data['name']
@@ -96,7 +95,7 @@ class SaveSubject(forms.ModelForm):
         except Exception as err:
             print(err)
             raise forms.ValidationError("An Error occurred.")
-        raise forms.ValidationError("Subject Name Already Exists.")
+        raise forms.ValidationError("Le nome de module existe deja.")
 
 class SaveStudent(forms.ModelForm):
     print("zave student hi")

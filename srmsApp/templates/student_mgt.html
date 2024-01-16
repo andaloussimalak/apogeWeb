@@ -63,13 +63,13 @@
 <script>
     $(function() {
         $('#add_new').click(function() {
-            uni_modal('<i class="fa fa-plus"></i> Add student', '{% url "manage-student" %}', 'modal-md')
+            uni_modal('<i class="fa fa-plus"></i> Ajouter Etudiant', '{% url "manage-student" %}', 'modal-md')
         })
         $('.view-data').click(function() {
-            uni_modal('<i class="material-icons">preview</i> View student Details', $(this).attr('data-url'), 'modal-md')
+            uni_modal('<i class="material-icons">preview</i> Voir Details Etudiant', $(this).attr('data-url'), 'modal-md')
         })
         $('.edit-data').click(function() {
-            uni_modal('<i class="fa fa-edit"></i> Edit student', $(this).attr('data-url'), 'modal-md')
+            uni_modal('<i class="fa fa-edit"></i> Modifier Etudiant', $(this).attr('data-url'), 'modal-md')
         })
         $('.delete-data').click(function() {
             _conf("Are you sure to delete this student permanently?", "delete_student", [$(this).attr('data-id')])

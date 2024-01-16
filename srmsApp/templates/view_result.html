@@ -3,24 +3,29 @@
     #uni_modal .modal-footer {
         display: none !important
     }
+
+
+    #marks-list dt{
+        background-color: lightgreen; /* Set the background color for the header */
+        color: black; /* Set the font color for the header */
+    }
+
 </style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <dl>
-                <dt>Student ID/Code</dt>
-                <dd class="ps-4 fw-bolder text-success">{{ result.student.student_id }}</dd>
-                <dt>Name</dt>
+                <dt>Apogee</dt>
+                <dd class="ps-4 fw-bolder text-success">{{ result.student.id }}</dd>
+                <dt>Nom</dt>
                 <dd class="ps-4 fw-bolder text-success">{{ result.student.get_name }}</dd>
-                <dt>Gender</dt>
-                <dd class="ps-4 fw-bolder text-success">{{ result.student.gender }}</dd>
             </dl>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <dl>
-                <dt>Class</dt>
+                <dt>Groupe</dt>
                 <dd class="ps-4 fw-bolder text-success">{{ result.student.classI }}</dd>
-                <dt>Semester</dt>
+                <dt>Semestre</dt>
                 <dd class="ps-4 fw-bolder text-success">{{ result.semester }}</dd>
             </dl>
         </div>
@@ -32,9 +37,9 @@
             <col width="50%">
         </colgroup>
         <thead>
-            <tr class="bg-info bg-gradient">
-                <th class="px-2 py-1 text-center">Subject</th>
-                <th class="px-2 py-1 text-center">Mark</th>
+            <tr class="bg-info bg-light">
+                <th class="px-2 py-1 text-center">Module</th>
+                <th class="px-2 py-1 text-center">Note</th>
             </tr>
         </thead>
         <tbody>
@@ -49,7 +54,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th class="px-2 py-1"><b>Average</b></th>
+                <th class="px-2 py-1"><b>Moyenne</b></th>
                 <th class="px-2 py-1 fw-bolder text-end" id="average">{{ result.average }}</th>
             </tr>
         </tfoot>

@@ -6,8 +6,8 @@
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="form-group mb-3 ">
-                    <label for="student" class="control-label">Student</label>
-                    <select name="student" id="student" class="form-select rounded-0" required>
+                    <label for="student" class="control-label">Etudiant</label>
+                    <select name="student" id="student" class="form-select rounded-0 text-dark" required>
                         {% if not  result.student %}
                         <option value="" disabled selected>Svp selectionnez ici</option>
                         {% endif %}
@@ -32,7 +32,7 @@
         <div class="row align-items-end">
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="form-group mb-3 ">
-                    <label for="subject" class="control-label">Subject</label>
+                    <label for="subject" class="control-label">Module</label>
                     <select name="subject" id="subject" class="form-select rounded-0">
                         {% if not  student.subject %}
                         <option value="" disabled selected>Svp selectionnez ici</option>
@@ -58,14 +58,14 @@
             </div>
         </div>
         <hr>
-        <table class="table table-bordered table-striped" id="marks-list">
+        <table class="table table-bordered table-striped table-light" id="marks-list">
             <colgroup>
                 <col width="45%">
                 <col width="45%">
                 <col width="10%">
             </colgroup>
             <thead>
-                <tr class="bg-info bg-gradient">
+                <tr class="bg-info ">
                     <th class="px-2 py-1 text-center">Module</th>
                     <th class="px-2 py-1 text-center">Note</th>
                     <th class="px-2 py-1 text-center">Action</th>
