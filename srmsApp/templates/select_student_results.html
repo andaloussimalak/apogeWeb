@@ -11,7 +11,7 @@
             <label for="student" class="control-label">Etudiant</label>
             <select name="student" id="student" class="form-select rounded-0" required>
                 {% if not  result.student %}
-                <option value="" disabled selected>Veuillez choisir</option>
+                <option value="" disabled selected>Veuillez Entrer l'apogée</option>
                 {% endif %}
                 {% for stud in students %}
                 {% if result.student.id == stud.id %}
@@ -32,7 +32,7 @@
     $(function() {
         $('#uni_modal').on('shown.bs.modal', function() {
             $('#student').select2({
-                placeholder: "Choisissez un etudiant",
+                placeholder: "Entrer l'apoge",
                 width: '100%',
                 dropdownParent: $('#uni_modal')
             })
